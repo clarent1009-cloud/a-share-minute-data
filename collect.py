@@ -11,7 +11,11 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 BASE = 'https://push2his.eastmoney.com/api/qt/stock/trends2/get'
-SYMBOLS = {'002463': '0.002463'}
+SYMBOLS = {
+    '002463': '0.002463',  # 沪电股份
+    '603893': '1.603893',  # 瑞芯微
+    '603861': '1.603861',  # 白云电器
+}
 ROOT = pathlib.Path(__file__).resolve().parent
 TZ = ZoneInfo('Asia/Shanghai')
 
