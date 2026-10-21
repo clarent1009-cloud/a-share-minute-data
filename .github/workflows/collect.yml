@@ -24,6 +24,7 @@ jobs:
       - name: Collect minute data
         run: python collect.py
 
+     
       - name: Save collected data
         run: |
           git config user.name "github-actions[bot]"
@@ -31,5 +32,7 @@ jobs:
           git add data/
           if ! git diff --cached --quiet; then
             git commit -m "Update minute data"
-            git push
+            git pull --rebase origin main
+            git push origin main
           fi
+
